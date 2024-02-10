@@ -115,6 +115,31 @@ document.getElementsByName('loopChoice').forEach((element) => {
     });
 });
 
+document.getElementById('teleportButton').addEventListener('click', () => {
+    const latlng_str = document.getElementById('inputLatLng').value;
+    if (latlng_str==='') {
+        return;
+    }
+    const choice = confirm(`Teleport?`);
+    if (choice) {
+        const latlng_array = latlng_str.split(',');
+        if (latlng_array.length !== 2) {
+            return;
+        }
+        const latlng = L.latLng(latlng_array[0], latlng_array[1]);
+        if (marker === null) {
+            marker = L.marker(latlng, {draggable: true});
+            marker.addTo(map);
+        }
+        marker.setLatLng(latlng);
+        markerShadowPos = latlng;
+        // Center map on new location
+        map.panTo(latlng);
+        sendLocation(`${markerShadowPos.lat},${markerShadowPos.lng}`)
+        clearSteps();
+    }
+})
+
 
 map.on('click', function(e) {
     if (!initMain(e)) {
@@ -177,6 +202,7 @@ function teleport(latlng) {
     }
     return choice;
 }
+
 
 
 // move towards target with distance meters

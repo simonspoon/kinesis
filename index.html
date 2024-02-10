@@ -19,9 +19,16 @@
 </head>
 <body>
 <div id="map"></div>
+
+<div id="gps-panel" class="card">
+    <div class="card-body">
+        <input type="text" id="inputLatLng" placeholder="Latitude, Longitude">
+        <button class="btn btn-outline-primary" id="teleportButton">Teleport</button>
+    </div>
+</div>
+
 <div class="card" id="control-panel">
     <div class="card-body">
-
         <div class="btn-group btn-group-sm" role="group" aria-label="Basic checkbox toggle button group">
             <input type="checkbox" class="btn-check" id="pauseSwitch" autocomplete="off">
             <label class="btn btn-outline-primary" for="pauseSwitch">Pause</label>
@@ -31,13 +38,16 @@
 
         <div class="btn-group btn-group-sm" role="group">
             <input type="radio" class="btn-check" name="speedChoice" id="speedChoice1" autocomplete="off" value="1" checked>
-            <label class="btn btn-outline-primary" for="speedChoice1">Walk</label>
+            <label class="btn btn-outline-primary" for="speedChoice1">Walk Slow</label>
 
-            <input type="radio" class="btn-check" name="speedChoice" id="speedChoice2" autocomplete="off" value="5">
-            <label class="btn btn-outline-primary" for="speedChoice2">Ride</label>
+            <input type="radio" class="btn-check" name="speedChoice" id="speedChoice2" autocomplete="off" value="2" checked>
+            <label class="btn btn-outline-primary" for="speedChoice2">Walk Fast</label>
 
-            <input type="radio" class="btn-check" name="speedChoice" id="speedChoice3" autocomplete="off" value="20">
-            <label class="btn btn-outline-primary" for="speedChoice3">Drive</label>
+            <input type="radio" class="btn-check" name="speedChoice" id="speedChoice3" autocomplete="off" value="5">
+            <label class="btn btn-outline-primary" for="speedChoice3">Ride</label>
+
+            <input type="radio" class="btn-check" name="speedChoice" id="speedChoice4" autocomplete="off" value="20">
+            <label class="btn btn-outline-primary" for="speedChoice4">Drive</label>
         </div>
 
         <div class="btn-group btn-group-sm" role="group">
