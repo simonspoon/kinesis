@@ -22,6 +22,20 @@
 
 <div id="gps-panel" class="card">
     <div class="card-body">
+        <select id="selectLocation">
+            <option value="">No selection</option>
+            <option value="37.80854632551083, -122.41029898482803">Pier 39,San Francisco</option>
+            <option value="34.00841389602872, -118.49862421822627">Santa Monica Pier</option>
+            <option value="41.661130,-0.893750">Zaragoza Spain</option>
+            <option value="-30.031118,-51.234435">Porto Alegre, Brazil</option>
+            <option value="40.62800,22.95507">Thessaloniki Greece</option>
+            <option value="25.076303,55.132383">Dubai, United Arab Emirates</option>
+            <option value="37.7879,-122.4074">Union Square</option>
+            <option value="-33.8643,151.2155">Sydney Botanical</option>
+            <option value="-11.562800, -77.270000">Chancay, Peru</option>
+            <option value="21.307075265801867, -157.86013229962367">Honolulu, Hawaii</option>
+
+        </select>
         <input type="text" id="inputLatLng" placeholder="Latitude, Longitude">
         <button class="btn btn-outline-primary" id="teleportButton">Teleport</button>
     </div>
@@ -37,10 +51,12 @@
         </div>
 
         <div class="btn-group btn-group-sm" role="group">
-            <input type="radio" class="btn-check" name="speedChoice" id="speedChoice1" autocomplete="off" value="1" checked>
+            <input type="radio" class="btn-check" name="speedChoice" id="speedChoice1" autocomplete="off" value="1"
+                   checked>
             <label class="btn btn-outline-primary" for="speedChoice1">Walk Slow</label>
 
-            <input type="radio" class="btn-check" name="speedChoice" id="speedChoice2" autocomplete="off" value="2" checked>
+            <input type="radio" class="btn-check" name="speedChoice" id="speedChoice2" autocomplete="off" value="2"
+                   checked>
             <label class="btn btn-outline-primary" for="speedChoice2">Walk Fast</label>
 
             <input type="radio" class="btn-check" name="speedChoice" id="speedChoice3" autocomplete="off" value="5">
@@ -51,7 +67,8 @@
         </div>
 
         <div class="btn-group btn-group-sm" role="group">
-            <input type="radio" class="btn-check" name="loopChoice" id="loopChoice1" autocomplete="off" value="off" checked>
+            <input type="radio" class="btn-check" name="loopChoice" id="loopChoice1" autocomplete="off" value="off"
+                   checked>
             <label class="btn btn-outline-primary" for="loopChoice1">Off</label>
 
             <input type="radio" class="btn-check" name="loopChoice" id="loopChoice2" autocomplete="off" value="loop">

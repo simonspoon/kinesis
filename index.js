@@ -133,13 +133,20 @@ document.getElementById('teleportButton').addEventListener('click', () => {
         }
         marker.setLatLng(latlng);
         markerShadowPos = latlng;
-        // Center map on new location
         map.panTo(latlng);
         sendLocation(`${markerShadowPos.lat},${markerShadowPos.lng}`)
         clearSteps();
     }
 })
 
+document.getElementById('selectLocation').addEventListener('change', () => {
+    const latlng = document.getElementById('selectLocation').value;
+    if (latlng==='') {
+        return;
+    }
+    document.getElementById('inputLatLng').value = latlng;
+    document.getElementById('teleportButton').click();
+})
 
 map.on('click', function(e) {
     if (!initMain(e)) {
